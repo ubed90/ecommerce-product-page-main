@@ -1,0 +1,140 @@
+.lightbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.75);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-in;
+
+  &__content {
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+    width: unquote($string: "min(100% , 55rem)");
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    &--closeBtn {
+      align-self: flex-end;
+      border: none;
+      outline: none;
+      background: none;
+      transform: scale(1.5);
+
+      svg path {
+        transition: all 0.3s ease;
+      }
+
+      &:hover svg path {
+        fill: var(--clr-primary);
+      }
+    }
+
+    &--slider {
+      display: flex;
+      flex-direction: column;
+      gap: 15rem;
+
+      &__display {
+        display: flex;
+        position: relative;
+        min-height: 44.5rem;
+
+        &--slide {
+          position: absolute;
+          opacity: 0;
+          border-radius: 1.5rem;
+          overflow: hidden;
+        }
+
+        &--slide.current--img {
+          animation: fade-in 0.4s ease-in forwards;
+        }
+
+        button {
+          cursor: pointer;
+          z-index: 1000;
+          position: absolute;
+          top: 55%;
+          width: 5.6rem;
+          height: 5.6rem;
+          border-radius: 50%;
+          border: none;
+          outline: none;
+          background-color: var(--clr-white);
+        }
+
+        button svg path {
+          transition: all 0.3s ease;
+        }
+
+        button:hover svg path {
+          stroke: var(--clr-primary);
+        }
+
+        &--prevBtn {
+          left: -5%;
+        }
+
+        &--nextBtn {
+          right: -5%;
+        }
+      }
+
+      &__thumbs {
+        display: flex;
+        justify-content: center;
+        gap: 2.8rem;
+
+        &--thumb {
+          width: 9.2rem;
+          background-color: var(--clr-white);
+          overflow: hidden;
+          border-radius: 1rem;
+
+          img {
+            object-fit: contain;
+            transition: opacity 0.3s ease-in;
+          }
+
+          &:hover {
+            img {
+              opacity: 0.35;
+            }
+          }
+
+          &.active {
+            border: 0.2rem solid var(--clr-primary);
+
+            img {
+              opacity: 0.35;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  &__content.active {
+      opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    background-color: none;
+  }
+}
