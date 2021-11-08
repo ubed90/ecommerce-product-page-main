@@ -316,6 +316,11 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.3s ease-in;
+}
+
+.nav__cart--cart__bottom--item .checkout:hover {
+  opacity: 0.5;
 }
 
 .nav__cart.not-empty .nav__cart--cart__bottom > p {
@@ -704,6 +709,8 @@ main {
   outline: none;
   background: none;
   transform: scale(1.5);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .lightbox__content--closeBtn svg path {
@@ -712,6 +719,10 @@ main {
 
 .lightbox__content--closeBtn:hover svg path {
   fill: var(--clr-primary);
+}
+
+.lightbox__content--closeBtn:hover {
+  transform: scale(1.5) rotate(360deg);
 }
 
 .lightbox__content--slider {
@@ -777,6 +788,7 @@ main {
   background-color: var(--clr-white);
   overflow: hidden;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .lightbox__content--slider__thumbs--thumb img {

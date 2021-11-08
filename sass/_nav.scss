@@ -193,18 +193,20 @@
 
           .checkout {
             display: inline-block;
-            // font-weight: font-weight(regular);
             border: none;
             outline: none;
             background-color: var(--clr-primary);
             color: var(--clr-white);
             border-radius: 1rem;
-            // text-align: center;
-            // padding: 1.5rem 0;
             height: 5.6rem;
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: opacity 0.3s ease-in;
+
+            &:hover {
+              opacity: 0.5;
+            }
           }
         }
       }
