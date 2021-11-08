@@ -518,6 +518,7 @@ main {
     aspect-ratio: 1;
     border-radius: 1.5rem;
     overflow: hidden;
+    cursor: pointer;
   }
   .slider__thumbs--thumb img {
     width: 100%;
