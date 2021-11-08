@@ -35,6 +35,10 @@ body {
   }
 }
 
+body.active {
+  overflow: hidden;
+}
+
 img {
   display: block;
   max-width: 100%;

@@ -66,18 +66,18 @@ const lightBoxNextBtn = document.querySelector(
 
 hamburger.addEventListener("click", function () {
   navLinksContainer.classList.add("active");
-  document.body.style.overflow = "hidden";
+  document.body.classList.add("active");
 });
 
 closeBtn.addEventListener("click", function () {
   navLinksContainer.classList.remove("active");
-  document.body.style.overflow = "initial";
+  document.body.classList.remove("active");
 });
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     navLinksContainer.classList.remove("active");
-    document.body.style.overflow = "initial";
+    document.body.classList.remove("active");
   });
 });
 

@@ -28,6 +28,10 @@ body {
       )
       [grid-end];
   }
+
+  &.active {
+    overflow: hidden;
+  }
 }
 
 img {
